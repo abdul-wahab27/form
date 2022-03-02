@@ -1,0 +1,37 @@
+<h1>Info Form</h1>
+<form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
+  <label for="name"> <h3>Name</h3> </label>
+  <input
+    type="text"
+    ngModel
+    id="one"
+    name="name"
+    placeholder="Enter your name"
+  /><br /><br />
+  <label for="email"><h3>Email</h3></label>
+  <input
+    type="text"
+    ngModel
+    name="email"
+    placeholder="Enter your email"
+  /><br />
+  <br />
+  <label for="address"><h3>Address</h3></label>
+  <input type="text" ngModel name="address" placeholder="Enter your address" />
+
+  <br /><br /><button type="submit">Get Value</button>
+</form>
+
+<table class="table">
+  <th>S.no</th>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Action</th>
+  <tr *ngFor="let user of users; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.address }}</td>
+  </tr>
+</table>
